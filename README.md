@@ -48,9 +48,7 @@ Pawtect is a comprehensive pet rescue and adoption platform connecting loving ho
 2. **Backend Setup**
    ```bash
    cd server
-   npm install
-  
-   npm start
+   node server.js
    ```
 
 3. **Frontend Setup**
@@ -62,9 +60,9 @@ Pawtect is a comprehensive pet rescue and adoption platform connecting loving ho
 
 4. **Chatbot Setup**
    ```bash
-   cd chatbot
+   cd server
    pip install -r requirements.txt
-   python app.py
+   uvicorn app:app --reload
    ```
 
 ## 📂 Project Structure
@@ -76,13 +74,12 @@ Pawtect-FYP/
 │   └── src/              # React components
 │       ├── components/   # Reusable UI
 │       ├── pages/        # Route pages
-│       └── store/        # Redux configuration
+│       └── styles/        # Redux configuration
 ├── server/               # Node.js backend
 │   ├── controllers/      # Business logic
 │   ├── models/           # MongoDB schemas
 │   ├── routes/           # API endpoints
 │   └── middleware/       # Authentication
-├── chatbot/              # Python AI chatbot
 │   ├── model/            # ML models
 │   └── training_data/    # Chatbot datasets
 └── docs/                 # Documentation
