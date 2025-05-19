@@ -41,7 +41,7 @@ Pawtect is a comprehensive pet rescue and adoption platform connecting loving ho
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/Pawtect-FYP.git
+   git clone https://github.com/futuremango/Pawtect-FYP.git
    cd Pawtect-FYP
    ```
 
@@ -49,8 +49,7 @@ Pawtect is a comprehensive pet rescue and adoption platform connecting loving ho
    ```bash
    cd server
    npm install
-   cp .env.example .env
-   # Edit .env with your credentials
+  
    npm start
    ```
 
@@ -99,11 +98,6 @@ Key Endpoints:
 - `POST /api/lost-reports` - File lost pet report
 - `POST /api/donations` - Process donations
 
-## 🖼️ Screenshots
-
-| Homepage | Adoption Portal | Lost Pets Map |
-|----------|-----------------|---------------|
-| ![Home](https://i.imgur.com/home.png) | ![Adopt](https://i.imgur.com/adopt.png) | ![Map](https://i.imgur.com/map.png) |
 
 ## 🛡️ Environment Variables
 
@@ -148,39 +142,15 @@ npm test
    - Containerize with Docker
    - Deploy to Python hosting (PythonAnywhere)
 
-## 🤝 How to Contribute
 
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
-## 📜 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
 
 ## ✉️ Contact
 
 Project Maintainers:
-- Romysa Siddiqui - [romysa@example.com]
-- Anza Malik - [anza@example.com]
+- Romysa Siddiqui - [romysasidd21@gmail.com]
+- Anza Malik - [anza.mk8142@gmail.com]
 
-Project Link: [https://github.com/yourusername/Pawtect-FYP](https://github.com/yourusername/Pawtect-FYP)
+Project Link: [https://github.com/futuremango/Pawtect-FYP](https://github.com/futuremango/Pawtect-FYP)
 ```
 
-This professional README includes:
-1. Badges for key technologies
-2. Clear feature overview
-3. Detailed installation instructions
-4. Complete project structure
-5. API documentation links
-6. Visual screenshots section
-7. Environment variables guide
-8. Testing instructions
-9. Deployment guide
-10. Contribution guidelines
-11. License information
-12. Contact details
-
-You can customize the placeholder links, emails, and screenshots with your actual project details. The markdown formatting ensures it displays beautifully on GitHub.
