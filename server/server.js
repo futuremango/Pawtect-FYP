@@ -1,4 +1,3 @@
-// server.js (updated)
 require('dotenv').config();
 console.log('Environment Variables Loaded:');
 console.log('CLIENT_URL:', process.env.CLIENT_URL ? '✅' : '❌ Missing');
@@ -39,7 +38,7 @@ app.use(cors({
 }));
 
 // Database connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/pawtect2', {
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
