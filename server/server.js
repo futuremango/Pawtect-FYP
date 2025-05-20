@@ -26,16 +26,17 @@ app.use(express.json());
 app.use(cors());
 
 // Static files and CORS
-app.use('/images', express.static(path.join(__dirname, '../frontend/public/images')));
 app.use('/uploads/images', express.static(path.join(__dirname, 'uploads/images')));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-app.use(express.static(path.join(__dirname, 'public'))); // For default images
 app.use(cors({ 
   origin: 'https://pawtect-fyp.vercel.app',
   methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/images', express.static(path.join(__dirname, '../client/public/images')));
+
 
 // Database connection
 mongoose.connect(process.env.MONGO_URI, {
