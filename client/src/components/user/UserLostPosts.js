@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../../styles/UserLostPosts.css';
-const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 const UserLostPosts = ({ userId, onDeletePost }) => {
   const [posts, setPosts] = useState([]);
@@ -13,7 +12,7 @@ const UserLostPosts = ({ userId, onDeletePost }) => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get(
-          `${API_BASE_URL}/api/posts/user/${userId}`, // Correct endpoint
+          `https://pawtect-fyp-production.up.railway.app/api/posts/user/${userId}`, // Correct endpoint
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem('token')}`

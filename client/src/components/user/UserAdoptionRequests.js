@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 const UserAdoptionRequests = () => {
   const [requests, setRequests] = useState([]);
@@ -12,7 +11,7 @@ const UserAdoptionRequests = () => {
     const fetchRequests = async () => {
       try {
         const res = await axios.get(
-          `${API_BASE_URL}/api/adoption/user/requests`,
+          `https://pawtect-fyp-production.up.railway.app/api/adoption/user/requests`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -34,7 +33,7 @@ const UserAdoptionRequests = () => {
     try {
       setCancelingId(requestId);
       const response = await axios.delete(
-        `${API_BASE_URL}/api/adoption/requests/${requestId}`,
+        `https://pawtect-fyp-production.up.railway.app/api/adoption/requests/${requestId}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -71,7 +70,7 @@ const UserAdoptionRequests = () => {
             <div key={request._id} className={`request-card status-${request.status}`}>
               <div className="pet-info">
                 <img 
-                  src={`${API_BASE_URL}${request.pet.image.startsWith('/') ? '' : '/'}${request.pet.image}`}
+                  src={`https://pawtect-fyp-production.up.railway.app${request.pet.image.startsWith('/') ? '' : '/'}${request.pet.image}`}
                   alt={request.pet.name}
                   className="pet-image"
                   onError={(e) => {

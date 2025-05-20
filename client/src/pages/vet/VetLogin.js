@@ -9,14 +9,13 @@ export default function VetLogin() {
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
-const API_BASE_URL = process.env.REACT_APP_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const endpoint = isLogin ? 'login' : 'signup';
 
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/vet/${endpoint}`, {
+      const response = await axios.post(`https://pawtect-fyp-production.up.railway.app/api/vet/${endpoint}`, {
         email,
         password,
       });

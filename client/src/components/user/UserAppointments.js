@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 const UserAppointments = () => {
   const [userAppointments, setUserAppointments] = useState([]);
@@ -14,7 +13,7 @@ const UserAppointments = () => {
       try {
         setLoading(true);
         const appointmentsRes = await axios.get(
-          `${API_BASE_URL}/api/vet/appointments`,
+          `https://pawtect-fyp-production.up.railway.app/api/vet/appointments`,
           {
             headers: {
               'Authorization': `Bearer ${localStorage.getItem('token')}`

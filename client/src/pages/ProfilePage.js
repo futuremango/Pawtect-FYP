@@ -6,7 +6,6 @@ import '../styles/ProfilePage.css';
 import UserAppointments from '../components/user/UserAppointments';
 import UserAdoptionRequests from '../components/user/UserAdoptionRequests';
 import UserLostPosts from '../components/user/UserLostPosts';
-const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 const ProfilePage = () => {
   const navigate = useNavigate();
@@ -41,7 +40,7 @@ const ProfilePage = () => {
   const fetchUserPosts = useCallback(async () => {
     try {
       const response = await axios.get(
-        `${API_BASE_URL}/api/posts/user/${storedUser._id}`,
+        `https://pawtect-fyp-production.up.railway.app/api/posts/user/${storedUser._id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -108,7 +107,7 @@ const ProfilePage = () => {
       }
 
       const response = await axios.patch(
-        `${API_BASE_URL}/api/profile`,
+        'https://pawtect-fyp-production.up.railway.app/api/profile',
         formData,
         {
           headers: {

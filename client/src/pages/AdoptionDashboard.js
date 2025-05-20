@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../styles/AdoptionDashboard.css';
 import AdoptionForm from '../components/AdoptionForm';
-const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 const AdoptionDashboard = () => {
   const [pets, setPets] = useState([]);
@@ -15,7 +14,7 @@ const AdoptionDashboard = () => {
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const response = await axios.get(`${API_BASE_URL}/api/adoption`);
+        const response = await axios.get('https://pawtect-fyp-production.up.railway.app/api/adoption');
         setPets(response.data);
         setFilteredPets(response.data);
       } catch (err) {
@@ -51,7 +50,7 @@ const AdoptionDashboard = () => {
         backgroundImage: `url('/images/dashboard.png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        minHeight: '95vh',
+        minHeight: '100vh',
       }}
     >
       <div className="adoption-dashboard p-3">

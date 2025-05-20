@@ -14,7 +14,6 @@ const transporter = require('./config/emailConfig'); // Only once
 const fetch = require('node-fetch'); // npm install node-fetch@2
 const PYTHON_API_URL = 'https://pawtect-fyp-production.up.railway.app/api/chat'; // Python FastAPI backend
 //=======================For chatbot=======================
-const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 
 // Create Express app first
@@ -107,6 +106,6 @@ app.post('/api/chat', async (req, res) => {
 // Server startup
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server running on ${API_BASE_URL}`);
+  console.log('Server running on https://pawtect-fyp-production.up.railway.app');
   console.log(`Node.js proxy server for chatbot ready`);
 });

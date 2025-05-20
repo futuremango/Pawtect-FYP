@@ -3,7 +3,6 @@ import axios from 'axios';
 import Navbar from '../components/Navbar';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-const API_BASE_URL = process.env.REACT_APP_API_URL;
  
 const AppointmentForm = () => {
   const [formData, setFormData] = useState({
@@ -20,7 +19,7 @@ const AppointmentForm = () => {
     }
      const fetchAppointments = async () => {
       try {
-        const res = await axios.get(`${API_BASE_URL}/api/vet/appointments`, {
+        const res = await axios.get('https://pawtect-fyp-production.up.railway.app/api/vet/appointments', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
           }
@@ -62,7 +61,7 @@ const AppointmentForm = () => {
 
     try {
       // Add authorization header to POST request
-      await axios.post(`${API_BASE_URL}/api/vet/appointments`, formData, {
+      await axios.post('https://pawtect-fyp-production.up.railway.app/api/vet/appointments', formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
@@ -75,7 +74,7 @@ const AppointmentForm = () => {
       setSelectedDate(null);
   
       // Refresh appointments with authorization
-      const res = await axios.get(`${API_BASE_URL}/api/vet/appointments`, {
+      const res = await axios.get('https://pawtect-fyp-production.up.railway.app/api/vet/appointments', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -20,7 +19,7 @@ const AdminLogin = () => {
     
     try {
       const endpoint = isLogin ? 'login' : 'signup';
-      const url = `${API_BASE_URL}/api/admin/${endpoint}`;
+      const url = `https://pawtect-fyp-production.up.railway.app/api/admin/${endpoint}`;
       
       const payload = isLogin ? {
         email: formData.email,

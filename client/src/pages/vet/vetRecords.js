@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 const VetRecords = () => {
   const [appointments, setAppointments] = useState([]); // All appointments
@@ -8,7 +7,7 @@ const VetRecords = () => {
 
   // Fetch appointments and filter for today
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/appointments`)
+    fetch('https://pawtect-fyp-production.up.railway.app/api/appointments')
       .then((res) => res.json())
       .then((data) => {
         setAppointments(data);

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 const AdminVolunteers = () => {
   const [volunteers, setVolunteers] = useState([]);
@@ -10,7 +9,7 @@ const AdminVolunteers = () => {
   useEffect(() => {
     const fetchVolunteers = async () => {
       try {
-        const res = await axios.get(`${API_BASE_URL}/api/admin/volunteers`, {
+        const res = await axios.get('https://pawtect-fyp-production.up.railway.app/api/admin/volunteers', {
           withCredentials: true,
         });
         setVolunteers(res.data);
@@ -27,7 +26,7 @@ const AdminVolunteers = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${API_BASE_URL}/api/admin/volunteers/${id}`);
+      await axios.delete(`https://pawtect-fyp-production.up.railway.app/api/admin/volunteers/${id}`);
       setVolunteers(prev => prev.filter(v => v._id !== id)); // Remove from local state
     } catch (err) {
       console.error('Error deleting volunteer:', err);

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 const AdminRescues = () => {
   const [rescues, setRescues] = useState([]);
@@ -9,7 +8,7 @@ const AdminRescues = () => {
   useEffect(() => {
     const fetchRescueRequests = async () => {
       try {
-        const res = await axios.get(`${API_BASE_URL}/api/admin/rescues`);
+        const res = await axios.get('https://pawtect-fyp-production.up.railway.app/api/admin/rescues');
         setRescues(res.data);
       } catch (error) {
         console.error('Error fetching rescue requests:', error);
@@ -20,7 +19,7 @@ const AdminRescues = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`${API_BASE_URL}/api/admin/rescues/${id}`);
+      await axios.delete(`https://pawtect-fyp-production.up.railway.app/api/admin/rescues/${id}`);
       setRescues(prev => prev.filter(r => r._id !== id));
     } catch (err) {
       console.error('Error deleting rescue request:', err);
