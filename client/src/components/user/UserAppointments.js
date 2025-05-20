@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 const UserAppointments = () => {
   const [userAppointments, setUserAppointments] = useState([]);
@@ -13,7 +14,7 @@ const UserAppointments = () => {
       try {
         setLoading(true);
         const appointmentsRes = await axios.get(
-          'http://localhost:5000/api/vet/appointments',
+          `${API_BASE_URL}/api/vet/appointments`,
           {
             headers: {
               'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -38,7 +39,7 @@ const UserAppointments = () => {
     try {
       setCancelingId(appointmentId);
       await axios.delete(
-        `http://localhost:5000/api/vet/appointments/${appointmentId}`,
+        `${API_BASE_URL}/api/vet/appointments/${appointmentId}`,
         {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -119,7 +120,7 @@ const UserAppointments = () => {
                               role="status" 
                               aria-hidden="true"
                             ></span>
-                            Canceling...
+                            Cancelling...
                           </>
                         ) : (
                           'Cancel'

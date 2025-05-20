@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 const AdminVolunteers = () => {
   const [volunteers, setVolunteers] = useState([]);
@@ -9,7 +10,7 @@ const AdminVolunteers = () => {
   useEffect(() => {
     const fetchVolunteers = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/admin/volunteers', {
+        const res = await axios.get(`${API_BASE_URL}/api/admin/volunteers`, {
           withCredentials: true,
         });
         setVolunteers(res.data);
@@ -26,7 +27,7 @@ const AdminVolunteers = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/admin/volunteers/${id}`);
+      await axios.delete(`${API_BASE_URL}/api/admin/volunteers/${id}`);
       setVolunteers(prev => prev.filter(v => v._id !== id)); // Remove from local state
     } catch (err) {
       console.error('Error deleting volunteer:', err);
@@ -70,7 +71,7 @@ const AdminVolunteers = () => {
                   <td className="px-4 py-2 border">{vol.phone}</td>
                   <td className="px-4 py-2 border">
                     <a
-                      href={`http://localhost:5000/uploads/${vol.cvPath}`}
+                      href={`${API_BASE_URL}/uploads/${vol.cvPath}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-blue-600 hover:underline"

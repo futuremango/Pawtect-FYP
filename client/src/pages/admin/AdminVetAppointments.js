@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 const AdminVetAppointments = () => {
   const [appointments, setAppointments] = useState([]);
@@ -7,7 +8,7 @@ const AdminVetAppointments = () => {
   useEffect(() => {
     const fetchVetAppointments = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/admin/vetappointments');
+        const res = await axios.get(`${API_BASE_URL}/api/admin/vetappointments`);
         setAppointments(res.data);
       } catch (error) {
         console.error('Error fetching vet appointments:', error);

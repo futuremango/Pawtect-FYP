@@ -9,13 +9,14 @@ export default function VetLogin() {
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
+const API_BASE_URL = process.env.REACT_APP_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const endpoint = isLogin ? 'login' : 'signup';
 
     try {
-      const response = await axios.post(`http://localhost:5000/api/vet/${endpoint}`, {
+      const response = await axios.post(`${API_BASE_URL}/api/vet/${endpoint}`, {
         email,
         password,
       });
@@ -108,3 +109,4 @@ export default function VetLogin() {
     </div>
   );
 }
+

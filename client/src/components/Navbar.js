@@ -157,7 +157,7 @@ const Navbar = () => {
                 >
                   <img
                     src={user.avatar
-                      ? `http://localhost:5000${user.avatar}`
+                      ? `https://pawtect-fyp-production.up.railway.app${user.avatar}`
                       : '/images/default-avatar.jpg'}
                     alt="Profile"
                     className="profile-pic"

@@ -13,11 +13,11 @@ const SinglePostPage = () => {
 useEffect(() => {
   const fetchPost = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/posts/${postId}`);
+        const response = await axios.get(`https://pawtect-fyp-production.up.railway.app/api/posts/${postId}`);
       // Add shareUrl if missing
       const postWithShareUrl = {
         ...response.data,
-        shareUrl: response.data.shareUrl || `http://localhost:3000/posts/${postId}`
+        shareUrl: response.data.shareUrl || `https://pawtect-fyp.vercel.app/posts/${postId}`
       };
       setPost(postWithShareUrl);
     } catch (err) {
@@ -44,7 +44,7 @@ useEffect(() => {
         
         {post.pet_image && (
           <img 
-            src={`http://localhost:5000/${post.pet_image}`}
+            src={`https://pawtect-fyp-production.up.railway.app/${post.pet_image}`}
             alt={post.pet_name}
             className="post-image"
           />

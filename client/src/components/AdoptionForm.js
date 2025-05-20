@@ -28,7 +28,7 @@ const AdoptionForm = ({ petId, onClose }) => {
       const token = localStorage.getItem('userToken');
       
       const response = await axios.post(
-        `http://localhost:5000/api/adoption/${petId}/request`,
+        `https://pawtect-fyp-production.up.railway.app/api/adoption/${petId}/request`,
         {}, // Send empty body since backend doesn't need form data
         {
           headers: {

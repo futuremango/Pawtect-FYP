@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 const AdminSurrenders = () => {
   const [surrenders, setSurrenders] = useState([]);
@@ -7,7 +8,7 @@ const AdminSurrenders = () => {
   useEffect(() => {
     const fetchSurrenderedPets = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/admin/surrenders');
+        const res = await axios.get(`${API_BASE_URL}/api/admin/surrenders`);
         setSurrenders(res.data);
       } catch (error) {
         console.error('Error fetching surrendered pets:', error);
@@ -18,7 +19,7 @@ const AdminSurrenders = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/admin/surrenders/${id}`);
+      await axios.delete(`${API_BASE_URL}/api/admin/surrenders/${id}`);
       setSurrenders(prev => prev.filter(s => s._id !== id)); // Optimistic update
     } catch (err) {
       console.error('Error deleting surrender request:', err);

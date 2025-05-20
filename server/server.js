@@ -12,9 +12,10 @@ const transporter = require('./config/emailConfig'); // Only once
 //=======================For chatbot=======================
 //=======================For chatbot=======================
 const fetch = require('node-fetch'); // npm install node-fetch@2
-const PYTHON_API_URL = 'http://127.0.0.1:8000/api/chat'; // Python FastAPI backend
+const PYTHON_API_URL = 'https://pawtect-fyp-production.up.railway.app/api/chat'; // Python FastAPI backend
 //=======================For chatbot=======================
-//=======================For chatbot=======================
+const API_BASE_URL = process.env.REACT_APP_API_URL;
+
 
 // Create Express app first
 const app = express();
@@ -31,7 +32,7 @@ app.use('/uploads/images', express.static(path.join(__dirname, 'uploads/images')
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.static(path.join(__dirname, 'public'))); // For default images
 app.use(cors({ 
-  origin: 'http://localhost:3000',
+  origin: 'https://pawtect-fyp.vercel.app',
   methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
@@ -106,6 +107,6 @@ app.post('/api/chat', async (req, res) => {
 // Server startup
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on ${API_BASE_URL}`);
   console.log(`Node.js proxy server for chatbot ready`);
 });

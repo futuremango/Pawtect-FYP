@@ -6,6 +6,7 @@ import '../styles/ProfilePage.css';
 import UserAppointments from '../components/user/UserAppointments';
 import UserAdoptionRequests from '../components/user/UserAdoptionRequests';
 import UserLostPosts from '../components/user/UserLostPosts';
+const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 const ProfilePage = () => {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ const ProfilePage = () => {
     if (storedUser.avatar) {
       const avatarUrl = storedUser.avatar.startsWith('http') 
         ? storedUser.avatar 
-        : `http://localhost:5000${storedUser.avatar}`;
+        : `https://pawtect-fyp-production.up.railway.app${storedUser.avatar}`;
       setPreviewAvatar(avatarUrl);
     }
   }, [storedUser.avatar]);
@@ -40,7 +41,7 @@ const ProfilePage = () => {
   const fetchUserPosts = useCallback(async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/posts/user/${storedUser._id}`,
+        `${API_BASE_URL}/api/posts/user/${storedUser._id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -107,7 +108,7 @@ const ProfilePage = () => {
       }
 
       const response = await axios.patch(
-        'http://localhost:5000/api/profile',
+        `${API_BASE_URL}/api/profile`,
         formData,
         {
           headers: {
@@ -129,7 +130,7 @@ const ProfilePage = () => {
       
       // Update avatar preview if changed
       if (response.data.user.avatar) {
-        const avatarUrl = `http://localhost:5000${response.data.user.avatar}`;
+        const avatarUrl = `https://pawtect-fyp-production.up.railway.app${response.data.user.avatar}`;
         setPreviewAvatar(avatarUrl);
       }
 
@@ -230,8 +231,8 @@ const ProfilePage = () => {
                       src={
                         previewAvatar || 
                         (storedUser.avatar 
-                          ? `http://localhost:5000${storedUser.avatar}` 
-                          : 'http://localhost:5000/images/default-avatar.jpg'
+                          ? `https://pawtect-fyp-production.up.railway.app${storedUser.avatar}` 
+                          : 'https://pawtect-fyp-production.up.railway.app/images/default-avatar.jpg'
                         )
                       }
                       alt="Profile"

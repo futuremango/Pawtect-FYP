@@ -40,7 +40,7 @@ const AuthPage = () => {
 
     try {
       const endpoint = isLogin ? 'login' : 'signup';
-      const response = await fetch(`http://localhost:5000/api/auth/${endpoint}`, {
+      const response = await fetch(`https://pawtect-fyp-production.up.railway.app/api/auth/${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

@@ -1,5 +1,3 @@
-// C:\Users\Anza\Desktop\pawtect5\pawtect\server\controllers\vetAppointmentsController.js
-// C:\Users\Anza\Desktop\pawtect5\pawtect\server\models\VetAppointments.js
 const VetAppointment = require('../models/VetAppointments');
 
 const getAppointments = async (req, res) => {

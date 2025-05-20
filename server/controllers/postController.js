@@ -30,7 +30,7 @@ exports.getSinglePost = async (req, res) => {
     if (!post) return res.status(404).json({ error: 'Post not found' });
 
     // Generate share URL with validation
-    const baseUrl = process.env.CLIENT_URL?.replace(/\/$/, '') || 'http://localhost:3000';
+    const baseUrl = process.env.CLIENT_URL?.replace(/\/$/, '') || 'https://pawtect-fyp.vercel.app';
     post.shareUrl = `${baseUrl}/posts/${post._id}`;
 
     res.json(post);
@@ -231,8 +231,8 @@ exports.sharePost = async (req, res) => {
     if (!post) return res.status(404).json({ error: 'Post not found' });
 
     // Generate complete image URL
-    const baseURL = process.env.CLIENT_URL?.replace(/\/$/, '') || 'http://localhost:3000';
-    const serverURL = process.env.SERVER_URL?.replace(/\/$/, '') || 'http://localhost:5000';
+    const baseURL = process.env.CLIENT_URL?.replace(/\/$/, '') || 'https://pawtect-fyp.vercel.app';
+    const serverURL = process.env.REACT_APP_API_URL?.replace(/\/$/, '') || 'https://pawtect-fyp-production.up.railway.app';
     
     const shareData = {
       ...post.toObject(),

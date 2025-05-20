@@ -340,7 +340,7 @@ const CommunityPage = () => {
                   <h5>{post.pet_name}</h5>
                   {post.pet_image && (
                     <img 
-                      src={`http://localhost:5000/${post.pet_image}`} 
+                      src={`https://pawtect-fyp-production.up.railway.app/${post.pet_image}`} 
                       alt={post.pet_name} 
                       className="img-fluid rounded mb-2" 
                       style={{ maxHeight: '250px', objectFit: 'cover', width: '100%' }} 

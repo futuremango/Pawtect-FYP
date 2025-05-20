@@ -345,7 +345,7 @@ const handleImageChange = (e) => {
                 <div className="pet-info">
                   <h3>{request.pet?.name}</h3>
                   <img 
-  src={`http://localhost:5000${request.pet?.image?.startsWith('/') ? '' : '/'}${request.pet?.image}`}
+  src={`https://pawtect-fyp-production.up.railway.app${request.pet?.image?.startsWith('/') ? '' : '/'}${request.pet?.image}`}
   alt={request.pet?.name}
   className="pet-image"
   onError={(e) => {
@@ -416,7 +416,7 @@ const handleImageChange = (e) => {
 )}
         </div>
       )}
-      
+       
     </div>
   );
 };

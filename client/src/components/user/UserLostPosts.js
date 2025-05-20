@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../../styles/UserLostPosts.css';
+const API_BASE_URL = process.env.REACT_APP_API_URL;
 
 const UserLostPosts = ({ userId, onDeletePost }) => {
   const [posts, setPosts] = useState([]);
@@ -12,7 +13,7 @@ const UserLostPosts = ({ userId, onDeletePost }) => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/posts/user/${userId}`, // Correct endpoint
+          `${API_BASE_URL}/api/posts/user/${userId}`, // Correct endpoint
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -78,7 +79,7 @@ const UserLostPosts = ({ userId, onDeletePost }) => {
 
               {post.pet_image && (
   <img
-    src={`http://localhost:5000/${post.pet_image}`}
+    src={`https://pawtect-fyp-production.up.railway.app/${post.pet_image}`}
     alt={post.pet_name}
     className="post-image"
   />
@@ -112,8 +113,8 @@ const UserLostPosts = ({ userId, onDeletePost }) => {
   <img 
     src={
       comment.user_id?.avatar 
-        ? `http://localhost:5000${comment.user_id.avatar}`
-        : 'http://localhost:5000/images/default-avatar.jpg'
+        ? `https://pawtect-fyp-production.up.railway.app${comment.user_id.avatar}`
+        : 'https://pawtect-fyp-production.up.railway.app/images/default-avatar.jpg'
     }
     alt="avatar"
     className="comment-avatar"

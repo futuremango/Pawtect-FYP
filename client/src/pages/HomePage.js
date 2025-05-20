@@ -21,7 +21,7 @@ const Home = () => {
     formData.append('cv', cvFile);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/volunteer', formData, {
+      const response = await axios.post('https://pawtect-fyp-production.up.railway.app/api/volunteer', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -39,7 +39,7 @@ const Home = () => {
   const handleRescue = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/rescue', rescueData);
+      const response = await axios.post('https://pawtect-fyp-production.up.railway.app/api/rescue', rescueData);
       alert(response.data.message);
       setRescueData({name: '',        email: '',        phone: '',        location: '',        animalType: '',        description: '',      });
     } catch (error) {
@@ -52,7 +52,7 @@ const Home = () => {
   const handleSurrender = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/surrender', surrenderData);
+      const response = await axios.post('https://pawtect-fyp-production.up.railway.app/api/surrender', surrenderData);
       alert(response.data.message);
       setSurrenderData({ name: '',        email: '',        phone: '',        petName: '',        petType: '',        petAge: '',        reason: '',      });
     } catch (error) {
@@ -74,7 +74,7 @@ const Home = () => {
         <p className="hero-subtitle">Find your perfect companion or help animals in need through our adoption and rescue services.</p>
         <button 
           className="adopt-btn" 
-          onClick={() => window.location.href = 'http://localhost:3000/adoptdash'}
+          onClick={() => window.location.href = 'https://pawtect-fyp.vercel.app/adoptdash'}
         >
           Start Adoption
         </button>
