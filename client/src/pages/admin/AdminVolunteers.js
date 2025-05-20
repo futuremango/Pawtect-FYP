@@ -70,7 +70,7 @@ const AdminVolunteers = () => {
                   <td className="px-4 py-2 border">{vol.phone}</td>
                   <td className="px-4 py-2 border">
                     <a
-                      href={`${API_BASE_URL}/uploads/${vol.cvPath}`}
+                      href={`https://pawtect-fyp-production.up.railway.app/uploads/${vol.cvPath}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-blue-600 hover:underline"

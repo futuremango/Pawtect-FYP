@@ -38,7 +38,7 @@ const UserAppointments = () => {
     try {
       setCancelingId(appointmentId);
       await axios.delete(
-        `${API_BASE_URL}/api/vet/appointments/${appointmentId}`,
+        `https://pawtect-fyp-production.up.railway.app/api/vet/appointments/${appointmentId}`,
         {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
