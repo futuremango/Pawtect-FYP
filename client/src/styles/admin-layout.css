@@ -1,0 +1,10 @@
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .admin-content-wrapper {
+    flex: 1;
+    padding: 20px;
+    transition: margin-left 0.3s;
+  }

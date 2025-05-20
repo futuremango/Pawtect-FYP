@@ -1,0 +1,49 @@
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .detail-item {
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+  
+  .detail-label {
+    font-weight: 600;
+    color: #6c757d;
+  }
+  
+  .description-section {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+  }
+  
+  .medical-history {
+    margin-top: 1rem;
+  }
+  
+  .medical-details {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .medical-tag {
+    background-color: #e2f0ff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .special-needs {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.8rem;
+    background-color: #fff3cd;
+    border-radius: 8px;
+  }

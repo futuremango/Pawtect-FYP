@@ -1,0 +1,161 @@
+.nav-logo {
+  font-family: 'Lilita One', cursive;
+  font-size: 28px;
+  font-weight: 700;
+  color: #7e4d15; /* From y.css */
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo:hover {
+  transform: scale(1.05);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Fixed from 'first baseline' */
+  align-items: center;
+  padding: 0.3rem 2rem;
+  background-color: transparent; /* Fixed typo, preserves big screen color */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-item {
+  color: #333; /* From original Navbar.css */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+}
+
+.nav-item:hover {
+  color: #007bff; /* From original Navbar.css */
+}
+
+.profile-dropdown {
+  position: relative;
+}
+
+.profile-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.profile-toggle:hover {
+  background: #f8f9fa;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #007bff;
+}
+
+.username {
+  font-weight: 500;
+  color: #333;
+}
+
+.dropdown-content {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white; /* Default for big screens */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 0.5rem;
+  min-width: 180px;
+  display: none;
+  flex-direction: column;
+}
+
+.dropdown-content.show {
+  display: flex;
+}
+
+.dropdown-content a, .logout-btn {
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  color: #333;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dropdown-content a:hover, .logout-btn:hover {
+  background: #f8f9fa;
+  color: #007bff;
+}
+
+/* Mobile Styles */
+.navbar-toggler {
+  border: none;
+  padding: 10px;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='%237e4d15' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: #fffcf2; /* From y.css, for mobile menu */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-item {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .profile-dropdown {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .profile-toggle {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .dropdown-content {
+    position: static;
+    background-color: #ff0000; /* Red background for mobile dropdown */
+    box-shadow: none;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .dropdown-content a, .logout-btn {
+    color: #ffffff; /* White text for contrast on red background */
+  }
+}

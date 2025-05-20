@@ -1,0 +1,146 @@
+/* Earthy Luxury Theme */
+.donation-container {
+    background-color: #fffcf2;
+    min-height: 100vh;
+    padding: 2rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+.donation-header h1 {
+    font-size: 2.75rem;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    margin: 0;
+}
+
+.stats-grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.stat-card {
+    background-color: #ccb498;
+    padding: 2rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    color: #5d4037;
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+}
+
+.chart-container {
+    background: #efebe9;
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin-bottom: 4rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.donations-table {
+    width: 100%;
+    background: #fff;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.donations-table th {
+    background-color: #ccb498;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.donations-table td {
+    padding: 1.2rem;
+    color: #4e342e;
+    border-bottom: 1px solid #d7ccc8;
+}
+
+.donations-table tr:nth-child(even) {
+    background: #f5efeb;
+}
+
+.donations-table tr:hover {
+    background: #ede0d4;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    border-radius: 25px;
+    font-weight: 600;
+}
+
+.approved {
+    background: linear-gradient(145deg, #a5d6a7 0%, #81c784 100%);
+    color: #1b5e20;
+}
+
+.pending {
+    background: linear-gradient(145deg, #ffe082 0%, #ffd54f 100%);
+    color: #f57f17;
+}
+
+.rejected {
+    background: linear-gradient(145deg, #ef9a9a 0%, #e57373 100%);
+    color: #b71c1c;
+}
+
+.action-button {
+    border: none;
+    padding: 0.8rem 1.75rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.approve-btn {
+    background: linear-gradient(145deg, #8d6e63 0%, #6d4c41 100%);
+    color: white;
+}
+
+.approve-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(141, 110, 99, 0.3);
+}
+
+.reject-btn {
+    background: linear-gradient(145deg, #d7ccc8 0%, #bcaaa4 100%);
+    color: #dea25e;
+}
+
+.reject-btn:hover {
+    transform: translateY(-2px);
+    background: #bcaaa4;
+}
+
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .donations-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.donation-container > * {
+    animation: fadeIn 0.6s ease-out forwards;
+}
