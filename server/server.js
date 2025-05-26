@@ -19,10 +19,7 @@ const PYTHON_API_URL = 'https://pawtect-fyp-production.up.railway.app/api/chat';
 
 // Create Express app first
 const app = express();
-app.use(cors({
-  origin: ['http://localhost:3000','https://pawtect-fyp.vercel.app'], // allow your frontend URL(s)
-  credentials: true,
-}));
+
 
 // Middleware setup
 app.use(morgan('dev'));
@@ -34,9 +31,9 @@ app.use(cors());
 app.use('/uploads/images', express.static(path.join(__dirname, 'uploads/images')));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(cors({ 
-  origin: 'https://pawtect-fyp.vercel.app',
-  methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  origin: ['http://localhost:3000','https://pawtect-fyp.vercel.app'],
+  // methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],
+  // allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
