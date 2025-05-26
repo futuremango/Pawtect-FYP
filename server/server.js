@@ -14,7 +14,7 @@ const transporter = require('./config/emailConfig'); // Only once
 const fetch = require('node-fetch'); // npm install node-fetch@2
 const PYTHON_API_URL = 'https://pawtect-fyp-production.up.railway.app/api/chat'; // Python FastAPI backend
 //=======================For chatbot=======================
-const cors = require('cors');
+
 app.use(cors({
   origin: ['http://localhost:3000'], // allow your frontend URL(s)
   credentials: true,
