@@ -20,7 +20,7 @@ const PYTHON_API_URL = 'https://pawtect-fyp-production.up.railway.app/api/chat';
 // Create Express app first
 const app = express();
 app.use(cors({
-  origin: ['http://localhost:3000'], // allow your frontend URL(s)
+  origin: ['http://localhost:3000','https://pawtect-fyp.vercel.app'], // allow your frontend URL(s)
   credentials: true,
 }));
 
