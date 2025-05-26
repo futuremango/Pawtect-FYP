@@ -49,11 +49,11 @@ const AdminDashboard = () => {
         const token = localStorage.getItem('adminToken');
         if (!token) throw new Error('No admin token found');
         
-        const profile = await axios.get('/api/admin/me', {
+        const profile = await axios.get('https://pawtect-fyp-production.up.railway.app/api/admin/me', {
           headers: { Authorization: `Bearer ${token}` }
         });
         
-        const statsRes = await axios.get('/api/admin/stats', {
+        const statsRes = await axios.get('https://pawtect-fyp-production.up.railway.app/api/admin/stats', {
           headers: { Authorization: `Bearer ${token}` }
         });
 
